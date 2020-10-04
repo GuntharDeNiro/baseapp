@@ -137,25 +137,22 @@ class Head extends React.Component<any> {
                     )}
             </div>,
             <div style={divStyle} className="pg-logo" >
-                <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
+                <Link to={'//mex.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"MexⒼ-Spot"}
                     </div>
                 </Link>
-
-            <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
+                <Link to={'//mex.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"MexⒼ-Futures"}
                     </div>
                 </Link>
-
-            <Link to={'https://platform.gunthy.org'} className="pg-header__navbar">
+                <Link to={'//platform.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"Ⓖ-Forex"}
                     </div>
                 </Link>
-
-            <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
+                <Link to={'//mex.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"Ⓖ-ERC20"}
                     </div>
