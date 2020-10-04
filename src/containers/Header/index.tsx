@@ -46,38 +46,38 @@ class Head extends React.Component<any> {
 
         return (
             <React.Fragment>
-            {!['/confirm'].some(r => location.pathname.includes(r)) &&
-                <header className={`pg-header`}>
-                    <div className={`pg-container pg-header__content ${tradingCls}`}>
-                        <div
-                            className={`pg-sidebar__toggler ${mobileWallet && 'pg-sidebar__toggler-mobile'}`}
-                            onClick={this.openSidebar}
-                        >
-                            <span className="pg-sidebar__toggler-item"/>
-                            <span className="pg-sidebar__toggler-item"/>
-                            <span className="pg-sidebar__toggler-item"/>
-                        </div>
-                        <Link to={'/wallets'} className="pg-header__logo">
-                            <div className="pg-logo">
-                                {colorTheme === 'light' ? (
-                                    <img src={logoLight} className="pg-logo__img" alt="Logo" />
-                                ) : (
-                                    <img src={logo} className="pg-logo__img" alt="Logo" />
-                               )}
+                {!['/confirm'].some(r => location.pathname.includes(r)) &&
+                    <header className={`pg-header`}>
+                        <div className={`pg-container pg-header__content ${tradingCls}`}>
+                            <div
+                                className={`pg-sidebar__toggler ${mobileWallet && 'pg-sidebar__toggler-mobile'}`}
+                                onClick={this.openSidebar}
+                            >
+                                <span className="pg-sidebar__toggler-item" />
+                                <span className="pg-sidebar__toggler-item" />
+                                <span className="pg-sidebar__toggler-item" />
                             </div>
-                        </Link>
-                        {this.renderMarketToggler()}
-                        <div className="pg-header__location">
-                            {mobileWallet ? <span>{mobileWallet}</span> : <span>{location.pathname.split('/')[1]}</span>}
+                            <Link to={'/wallets'} className="pg-header__logo">
+                                <div className="pg-logo">
+                                    {colorTheme === 'light' ? (
+                                        <img src={logoLight} className="pg-logo__img" alt="Logo" />
+                                    ) : (
+                                            <img src={logo} className="pg-logo__img" alt="Logo" />
+                                        )}
+                                </div>
+                            </Link>
+                            {this.renderMarketToggler()}
+                            <div className="pg-header__location">
+                                {mobileWallet ? <span>{mobileWallet}</span> : <span>{location.pathname.split('/')[1]}</span>}
+                            </div>
+                            {this.renderMobileWalletNav()}
+                            <div className="pg-header__navbar">
+                                {this.renderMarketToolbar()}
+                                <NavBar onLinkChange={this.closeMenu} />
+                            </div>
                         </div>
-                        {this.renderMobileWalletNav()}
-                        <div className="pg-header__navbar">
-                            {this.renderMarketToolbar()}
-                            <NavBar onLinkChange={this.closeMenu}/>
-                        </div>
-                    </div>
-                </header>}
-          </React.Fragment>
+                    </header>}
+            </React.Fragment>
         );
     }
 
@@ -102,7 +102,7 @@ class Head extends React.Component<any> {
             return null;
         }
 
-        return <HeaderToolbar/>;
+        return <HeaderToolbar />;
     };
 
     private renderMarketToggler = () => {
@@ -118,14 +118,18 @@ class Head extends React.Component<any> {
                     {currentMarket && currentMarket.name}
                 </p>
                 {marketSelectorOpened ? (
-                    <img src={require(`./arrows/arrowBottom${isLight ? 'Light' : ''}.svg`)} alt="arrow"/>
+                    <img src={require(`./arrows/arrowBottom${isLight ? 'Light' : ''}.svg`)} alt="arrow" />
                 ) : (
-                    <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow"/>
-                )}
-            </div> ,
-            <div><a href="https://mex.gunthy.org">     Mex-Spot</a></div>
-           
-                ];
+                        <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow" />
+                    )}
+            </div>,
+            <Link to={'https://mex.gunthy.org'} className="pg-header__logo">
+                <div className="pg-logo">
+                    Mex-Spot
+            </div>
+            </Link>
+
+        ];
     };
 
     private openSidebar = () => this.props.toggleSidebar(!this.props.sidebarOpened);
