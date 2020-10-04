@@ -111,7 +111,9 @@ class Head extends React.Component<any> {
         if (!location.pathname.includes('/trading/')) {
             return null;
         }
-
+        const divStyle = {
+            color: '#fff'
+          };
         return [
             <div className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
                 <p className="pg-header__market-selector-toggle-value">
@@ -124,7 +126,7 @@ class Head extends React.Component<any> {
                     )}
             </div>,
             <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
-                <div className="pg-logo" style="color:#fff">
+                <div style={divStyle} className="pg-logo" >
                     {"Mex-Spot"}
             </div>
             </Link>
