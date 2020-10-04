@@ -122,7 +122,8 @@ class Head extends React.Component<any> {
                 ) : (
                     <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow"/>
                 )}
-            </div> , <div>Test</div>
+            </div> ,
+            <div><a href="https://mex.gunthy.org">     Mex-Spot</a></div>
            
                 ];
     };
