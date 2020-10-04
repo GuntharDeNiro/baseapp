@@ -115,8 +115,16 @@ class Head extends React.Component<any> {
             color: '#fff',
             display: "flex",
             "font-size": "14px",
-            "text-decoration": "none"
-          };
+            "text-decoration": "none",
+            "box-sizing": "border-box",
+            "margin": "0px",
+            "min-width": "0px",
+            "padding-left": "8px",
+            "padding-right": "16px",
+            "flex-shrink": "0",
+            "-webkit-box-align": "center",
+            "align-items": "center"
+        };
         return [
             <div className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
                 <p className="pg-header__market-selector-toggle-value">
@@ -131,68 +139,68 @@ class Head extends React.Component<any> {
             <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
                 <div style={divStyle} className="pg-logo" >
                     {"MexⒼ-Spot"}
-            </div>
+                </div>
             </Link>,
             ,
             <Link to={'https://platform.gunthy.org'} className="pg-header__navbar">
                 <div style={divStyle} className="pg-logo" >
                     {"Ⓖ-Forex"}
-            </div>
+                </div>
             </Link>,
             <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
                 <div style={divStyle} className="pg-logo" >
                     {"Ⓖ-ERC20"}
-            </div>
+                </div>
             </Link>,
             ,
             <Link to={'https://platform.gunthy.org'} className="pg-header__navbar">
                 <div style={divStyle} className="pg-logo" >
                     {""}
-            </div>
+                </div>
             </Link>,
             <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
                 <div style={divStyle} className="pg-logo" >
-                {""}
-            </div>
+                    {""}
+                </div>
             </Link>,
             ,
             <Link to={'https://platform.gunthy.org'} className="pg-header__navbar">
                 <div style={divStyle} className="pg-logo" >
-                {""}
-            </div>
+                    {""}
+                </div>
             </Link>,
             <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
                 <div style={divStyle} className="pg-logo" >
-                {""}
-            </div>
+                    {""}
+                </div>
             </Link>,
             ,
             <Link to={'https://platform.gunthy.org'} className="pg-header__navbar">
                 <div style={divStyle} className="pg-logo" >
-                {""}
-            </div>
+                    {""}
+                </div>
             </Link>,
             <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
                 <div style={divStyle} className="pg-logo" >
-                {""}
-            </div>
+                    {""}
+                </div>
             </Link>,
             ,
             <Link to={'https://platform.gunthy.org'} className="pg-header__navbar">
                 <div style={divStyle} className="pg-logo" >
-                {""}
-            </div>
+                    {""}
+                </div>
             </Link>,
             <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
                 <div style={divStyle} className="pg-logo" >
-                {""}
-            </div>
+                    {""}
+                </div>
             </Link>,
             ,
             <Link to={'https://platform.gunthy.org'} className="pg-header__navbar">
                 <div style={divStyle} className="pg-logo" >
-                {""}
-            </div>
+                    {""}
+                </div>
             </Link>
 
         ];
