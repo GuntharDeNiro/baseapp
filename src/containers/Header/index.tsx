@@ -128,9 +128,9 @@ class Head extends React.Component<any> {
                 background: "#E0A300"
               },
         };
-        //const marketToggle = {"background-color": "#E0A300"}
+        const marketToggle = {"background": "#E0A300"}
         return [
-            <div /*style={marketToggle}*/ className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
+            <div style={marketToggle} className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
                 <p className="pg-header__market-selector-toggle-value">
                     {currentMarket && currentMarket.name}
                 </p>
