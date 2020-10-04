@@ -123,11 +123,13 @@ class Head extends React.Component<any> {
             "padding-right": "16px",
             "flex-shrink": "0",
             "-webkit-box-align": "center",
-            "align-items": "center"
+            "align-items": "center",
+            "&:hover": {
+                background: "#E0A300"
+              },
         };
-        const marketToggle = {"background-color": "rgb(240, 185, 11)"}
         return [
-            <div style={marketToggle} className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
+            <div className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
                 <p className="pg-header__market-selector-toggle-value">
                     {currentMarket && currentMarket.name}
                 </p>
