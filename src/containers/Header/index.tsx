@@ -128,7 +128,7 @@ class Head extends React.Component<any> {
                 background: "#E0A300"
               },
         };
-        const marketToggle = {color:"#000","background": "#80E0A300"}
+        const marketToggle = {"background": "#80E0A300"}
         return [
             <div style={marketToggle} className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
                 <p className="pg-header__market-selector-toggle-value">
@@ -140,7 +140,7 @@ class Head extends React.Component<any> {
                         <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow" />
                     )}
             </div>,
-            <div className={"divStyle"} >
+            <div style={divStyle} className="pg-logo" >
                 <a href={'https//mex.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"MexⒼ-Spot"}
