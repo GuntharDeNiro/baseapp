@@ -32,7 +32,7 @@ class HeaderToolbarContainer extends React.Component<Props> {
         const cls = isPositive ? 'positive' : 'negative';
 
         const bidUnit = currentMarket && currentMarket.quote_unit.toUpperCase();
-        const askUnit = currentMarket && currentMarket.base_unit.toUpperCase();
+        //const askUnit = currentMarket && currentMarket.base_unit.toUpperCase();
 
         return (
             <div className="pg-header__toolbar">

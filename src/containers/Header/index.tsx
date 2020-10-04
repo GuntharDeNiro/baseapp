@@ -122,7 +122,11 @@ class Head extends React.Component<any> {
                 ) : (
                     <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow"/>
                 )}
+                <p className="pg-header__market-selector-toggle-value">
+                    {"Mex"}
+                </p>
             </div>
+            
         );
     };
 
