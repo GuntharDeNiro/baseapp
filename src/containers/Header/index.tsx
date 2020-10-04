@@ -114,7 +114,8 @@ class Head extends React.Component<any> {
         const divStyle = {
             color: '#fff',
             display: "auto",
-            "font-size": "14px"
+            "font-size": "14px",
+            "text-decoration": "none"
           };
         return [
             <div className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
