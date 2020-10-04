@@ -140,7 +140,7 @@ class Head extends React.Component<any> {
                         <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow" />
                     )}
             </div>,
-            <div className={divStyle} >
+            <div className={"divStyle"} >
                 <a href={'https//mex.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"MexⒼ-Spot"}
