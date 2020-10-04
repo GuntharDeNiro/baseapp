@@ -112,7 +112,7 @@ class Head extends React.Component<any> {
             return null;
         }
 
-        return (
+        return [
             <div className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
                 <p className="pg-header__market-selector-toggle-value">
                     {currentMarket && currentMarket.name}
@@ -122,12 +122,9 @@ class Head extends React.Component<any> {
                 ) : (
                     <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow"/>
                 )}
-                <p className="pg-header__market-selector-toggle-value">
-                    {"Mex"}
-                </p>
-            </div>
-            
-        );
+            </div> , <div>Test</div>
+           
+                ];
     };
 
     private openSidebar = () => this.props.toggleSidebar(!this.props.sidebarOpened);
