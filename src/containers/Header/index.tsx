@@ -113,7 +113,7 @@ class Head extends React.Component<any> {
         }
         const divStyle = {
             color: '#fff',
-            display: "flex",
+            display: "auto",
             "font-size": "14px"
           };
         return [
