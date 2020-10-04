@@ -123,9 +123,9 @@ class Head extends React.Component<any> {
                         <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow" />
                     )}
             </div>,
-            <Link to={'https://mex.gunthy.org'} className="pg-header__logo">
-                <div className="pg-logo">
-                    Mex-Spot
+            <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
+                <div className="pg-logo" style="color:#fff">
+                    {"Mex-Spot"}
             </div>
             </Link>
 
