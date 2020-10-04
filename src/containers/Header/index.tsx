@@ -124,7 +124,7 @@ class Head extends React.Component<any> {
             "flex-shrink": "0",
             "-webkit-box-align": "center",
             "align-items": "center",
-            "&:hover": {
+            "a:hover": {
                 background: "#E0A300"
               },
         };
@@ -140,7 +140,7 @@ class Head extends React.Component<any> {
                         <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow" />
                     )}
             </div>,
-            <div style={divStyle} className="pg-logo" >
+            <div className={divStyle} >
                 <a href={'https//mex.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"MexⒼ-Spot"}
