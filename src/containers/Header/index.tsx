@@ -136,29 +136,31 @@ class Head extends React.Component<any> {
                         <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow" />
                     )}
             </div>,
-            <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
-                <div style={divStyle} className="pg-logo" >
-                    {"MexⒼ-Spot"}
-                </div>
-            </Link>,
+            <div style={divStyle} className="pg-logo" >
+                <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
+                    <div style={divStyle} className="pg-logo" >
+                        {"MexⒼ-Spot"}
+                    </div>
+                </Link>
 
             <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
-                <div style={divStyle} className="pg-logo" >
-                    {"MexⒼ-Futures"}
-                </div>
-            </Link>,
+                    <div style={divStyle} className="pg-logo" >
+                        {"MexⒼ-Futures"}
+                    </div>
+                </Link>
 
             <Link to={'https://platform.gunthy.org'} className="pg-header__navbar">
-                <div style={divStyle} className="pg-logo" >
-                    {"Ⓖ-Forex"}
-                </div>
-            </Link>,
-            
+                    <div style={divStyle} className="pg-logo" >
+                        {"Ⓖ-Forex"}
+                    </div>
+                </Link>
+
             <Link to={'https://mex.gunthy.org'} className="pg-header__navbar">
-                <div style={divStyle} className="pg-logo" >
-                    {"Ⓖ-ERC20"}
-                </div>
-            </Link>
+                    <div style={divStyle} className="pg-logo" >
+                        {"Ⓖ-ERC20"}
+                    </div>
+                </Link>
+            </div>
 
         ];
     };
