@@ -125,8 +125,9 @@ class Head extends React.Component<any> {
             "-webkit-box-align": "center",
             "align-items": "center"
         };
+        const marketToggle = {"background-color": "rgb(240, 185, 11)"}
         return [
-            <div className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
+            <div style={marketToggle} className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
                 <p className="pg-header__market-selector-toggle-value">
                     {currentMarket && currentMarket.name}
                 </p>
@@ -142,21 +143,21 @@ class Head extends React.Component<any> {
                         {"MexⒼ-Spot"}
                     </div>
                 </a>
-                <Link to={'//mex.gunthy.org'} className="pg-header__navbar">
+                <a href={'//mex.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"MexⒼ-Futures"}
                     </div>
-                </Link>
-                <Link to={'//platform.gunthy.org'} className="pg-header__navbar">
+                    </a>
+                <a href={'//platform.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"Ⓖ-Forex"}
                     </div>
-                </Link>
-                <Link to={'//mex.gunthy.org'} className="pg-header__navbar">
+                    </a>
+                <a href={'//mex.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"Ⓖ-ERC20"}
                     </div>
-                </Link>
+                    </a>
             </div>
 
         ];
