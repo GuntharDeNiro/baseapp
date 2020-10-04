@@ -137,11 +137,11 @@ class Head extends React.Component<any> {
                     )}
             </div>,
             <div style={divStyle} className="pg-logo" >
-                <Link to={'//mex.gunthy.org'} className="pg-header__navbar">
+                <a href={'https//mex.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"MexⒼ-Spot"}
                     </div>
-                </Link>
+                </a>
                 <Link to={'//mex.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"MexⒼ-Futures"}
