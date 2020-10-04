@@ -2,7 +2,7 @@ import { Decimal } from '@openware/components';
 import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import {
     Market,
     RootState,
@@ -34,7 +34,12 @@ class HeaderToolbarContainer extends React.Component<Props> {
         const bidUnit = currentMarket && currentMarket.quote_unit.toUpperCase();
         //const askUnit = currentMarket && currentMarket.base_unit.toUpperCase();
 
-        return (
+        return [
+            <Link to={'https://mex.gunthy.org'} className="pg-header__toolbar">
+                <div className="pg-header__toolbar-item" >
+                    {"Mex-Spot"}
+            </div>
+            </Link>,
             <div className="pg-header__toolbar">
                 <div className="pg-header__toolbar-item">
                     <p className="pg-header__toolbar-item-value pg-header__toolbar-item-value-positive">
@@ -77,7 +82,7 @@ class HeaderToolbarContainer extends React.Component<Props> {
                     </p>
                 </div>
             </div>
-        );
+        ];
     }
 
     private getTickerValue = (value: string) => {
