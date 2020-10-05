@@ -126,7 +126,7 @@ class Head extends React.Component<any> {
             "align-items": "center",
             "a:hover": {
                 background: "#E0A300"
-              },
+            },
         };
         const callOut = {
             right: "15px",
@@ -148,7 +148,7 @@ class Head extends React.Component<any> {
             left: "0px"
         }
 
-        const marketToggle = {"background": "#E0A300"}
+        const marketToggle = { "background": "#E0A300" }
 
         return [
             <div style={marketToggle} className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
@@ -171,20 +171,18 @@ class Head extends React.Component<any> {
                     <div style={divStyle} className="pg-logo" >
                         {"MexⒼ-Futures"}
                     </div>
-                    </a>
+                </a>
                 <a href={'//platform.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"Ⓖ-Forex"}
+                        <img src={require(`./arrows/hot.png`)} alt="arrow" />
                     </div>
-                    <div style={callOut} className="pg-logo" >
-                        {"HOT"}
-                    </div>
-                    </a>
+                </a>
                 <a href={'//mex.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"Ⓖ-ERC20"}
                     </div>
-                    </a>
+                </a>
             </div>
 
         ];
