@@ -166,38 +166,9 @@ class Head extends React.Component<any> {
         if (!location.pathname.includes('/trading/')) {
             return null;
         }
-        const divStyle = {
-            color: '#fff',
-            display: "flex",
-            "flex-direction": "row",
-            "font-size": "14px",
-            "text-decoration": "none",
-            "box-sizing": "border-box",
-            "margin": "0px",
-            "min-width": "0px",
-            "padding-left": "8px",
-            "padding-right": "16px",
-            "flex-shrink": "0",
-            "-webkit-box-align": "left",
-            "align-items": "left",
-            "a:hover": {
-                background: "#E0A300"
-            },
-        };
-
+        
         const marketToggle = { "background": "#E0A300" }
-
-        const onMouseOver = event => {
-            const el = event.target;
-            el.style.color = "#E0A300";
-        };
-
-        const onMouseOut = event => {
-            const el = event.target;
-            let black = "#fff";
-            el.style.color = black;
-        };
-
+        
         return [
             <div style={marketToggle} className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
                 <p className="pg-header__market-selector-toggle-value">
