@@ -129,7 +129,7 @@ class Head extends React.Component<any> {
                 background: "#E0A300"
             },
         };
-        
+
         const marketToggle = { "background": "#E0A300" }
 
         return [
@@ -143,25 +143,25 @@ class Head extends React.Component<any> {
                         <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow" />
                     )}
             </div>,
-            <div className={divStyle} >
+            <div style={divStyle} >
                 <a href={'https://mex.gunthy.org'} className="pg-header__navbar">
-                    <div >
+                    <div style={divStyle} >
                         {"MexⒼ-Spot"}
                     </div>
                 </a>
                 <a href={'https://mex.gunthy.org'} className="pg-header__navbar">
-                    <div >
+                    <div style={divStyle} >
                         {"MexⒼ-Futures"}
                     </div>
                 </a>
                 <a href={'https://platform.gunthy.org'} className="pg-header__navbar">
-                    <div  >
+                    <div style={divStyle} >
                         {"Ⓖ-Forex "}
-                        <img src={require(`./arrows/hot.png`)} alt="arrow" width="30%"/>
+                        <img src={require(`./arrows/hot.png`)} alt="arrow" width="30%" />
                     </div>
                 </a>
                 <a href={'https://spot.gunthy.org'} className="pg-header__navbar">
-                    <div >
+                    <div style={divStyle} >
                         {"Ⓖ-ERC20"}
                     </div>
                 </a>
