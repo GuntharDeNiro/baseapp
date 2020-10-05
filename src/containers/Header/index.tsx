@@ -155,8 +155,8 @@ class Head extends React.Component<any> {
                 </a>
                 <a href={'//platform.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
-                        {"Ⓖ-Forex"}
-                        <img src={require(`./arrows/hot.png`)} alt="arrow" />
+                        {"Ⓖ-Forex "}
+                        <img src={require(`./arrows/hot.png`)} alt="arrow" width="50%"/>
                     </div>
                 </a>
                 <a href={'//mex.gunthy.org'} className="pg-header__navbar">
