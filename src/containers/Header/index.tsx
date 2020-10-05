@@ -113,8 +113,7 @@ class Head extends React.Component<any> {
         }
         const divStyle = {
             color: '#fff',
-            display: "flex",
-            "flex-direction": "row",
+            display: "inline-block",
             "font-size": "14px",
             "text-decoration": "none",
             "box-sizing": "border-box",
@@ -159,12 +158,7 @@ class Head extends React.Component<any> {
                         {"Ⓖ-ERC20"}
                     </div>
                 </a>
-                <a href={'https://spot.gunthy.org'} className="pg-header__navbar">
-                    <div style={divStyle} className="pg-logo" >
-                        {""}
-                    </div>
-                </a>
-                <a href={'https://platform.gunthy.org'} className="pg-header__navbar">
+                             <a href={'https://platform.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"Ⓖ-Forex "}
                         <img src={require(`./arrows/hot.png`)} alt="arrow" width="30%"/>
