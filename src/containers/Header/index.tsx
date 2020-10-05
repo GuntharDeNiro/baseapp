@@ -128,7 +128,28 @@ class Head extends React.Component<any> {
                 background: "#E0A300"
               },
         };
+        const callOut = {
+            right: "15px",
+            "box-sizing": "border-box",
+            margin: "0px 0px 0px 8px",
+            "min-width": "0px",
+            display: "flex",
+            position: "relative",
+            "border-radius": "4px",
+            "-webkit-box-align": "center",
+            "align-items": "center",
+            height: "16px",
+            "background-color": "rgb(240, 185, 11)",
+            color: "rgb(33, 40, 34)",
+            "line-height": "16px",
+            "padding-left": "4px",
+            "padding-right": "4px",
+            "font-size": "12px",
+            left: "0px"
+        }
+
         const marketToggle = {"background": "#E0A300"}
+
         return [
             <div style={marketToggle} className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
                 <p className="pg-header__market-selector-toggle-value">
@@ -154,6 +175,9 @@ class Head extends React.Component<any> {
                 <a href={'//platform.gunthy.org'} className="pg-header__navbar">
                     <div style={divStyle} className="pg-logo" >
                         {"Ⓖ-Forex"}
+                    </div>
+                    <div style={callOut} className="pg-logo" >
+                        {"HOT"}
                     </div>
                     </a>
                 <a href={'//mex.gunthy.org'} className="pg-header__navbar">
