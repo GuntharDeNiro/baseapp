@@ -113,7 +113,7 @@ class Head extends React.Component<any> {
                                     onMouseOut={event => onMouseOut(event)}>
                                     <div style={divStyle} >
                                         {"Ⓖ-Forex "}
-                                        <img src={require(`./arrows/hot.png`)} alt="arrow" width="30%" />
+                                        <img src={require(`./arrows/hot.png`)} alt="arrow" width="30%" height="30%"/>
                                     </div>
                                 </a>
                             </div>
