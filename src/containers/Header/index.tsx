@@ -95,9 +95,8 @@ class Head extends React.Component<any> {
                                 </div>
                             </Link>
                             {this.renderMarketToggler()}
-                            {location.pathname.includes('/simpleT') ? (<div className="pg-header__market-selector-toggle adv-trade" onClick={this.goToAdvanced}>Advanced Trading</div>) : ''}
-
                             <div style={divStyle} >
+                                {location.pathname.includes('/simpleT') ? (<div className="pg-header__market-selector-toggle adv-trade" onClick={this.goToAdvanced}>Advanced Trading</div>) : ''}
                                 <Link to={'/api/v2/barong/identity/sessions/sso'} onMouseEnter={event => onMouseOver(event)}
                                     onMouseOut={event => onMouseOut(event)}>
                                     <div style={divStyle} >
