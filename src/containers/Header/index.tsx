@@ -209,28 +209,6 @@ class Head extends React.Component<any> {
                         <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow" />
                     )}
             </div>,
-            <div style={divStyle} >
-                <Link to={'/api/v2/barong/identity/sessions/sso'} onMouseEnter={event => onMouseOver(event)}
-                    onMouseOut={event => onMouseOut(event)}>
-                    <div style={divStyle} >
-                        {"MexⒼ-Spot"}
-                    </div>
-                </Link>
-                <a href={'https://mex.gunthy.org'} onMouseEnter={event => onMouseOver(event)}
-                    onMouseOut={event => onMouseOut(event)}>
-                    <div style={divStyle} >
-                        {"MexⒼ-Futures"}
-                    </div>
-                </a>
-                <a href={'https://platform.gunthy.org'} onMouseEnter={event => onMouseOver(event)}
-                    onMouseOut={event => onMouseOut(event)}>
-                    <div style={divStyle} >
-                        {"Ⓖ-Forex "}
-                        <img src={require(`./arrows/hot.png`)} alt="arrow" width="30%" />
-                    </div>
-                </a>
-            </div>
-
         ];
     };
 
