@@ -7,7 +7,7 @@ export const customWidgetParams = {};
 export const customWidgetOptions = (colorTheme?: string) => {
     if (colorTheme === 'light') {
         return ({
-            toolbar_bg: colors.light.chart.primary,
+            toolbar_bg: "#14151a",
             loading_screen: {
                 backgroundColor: colors.light.chart.primary,
             },
@@ -48,7 +48,7 @@ export const customWidgetOptions = (colorTheme?: string) => {
             ['mainSeriesProperties.candleStyle.borderDownColor']: colors.basic.chart.down,
             ['mainSeriesProperties.candleStyle.wickUpColor']: colors.basic.chart.up,
             ['mainSeriesProperties.candleStyle.wickDownColor']: colors.basic.chart.down,
-            ['paneProperties.background']: colors.basic.chart.primary,
+            ['paneProperties.background']: "#14151a",
             ['paneProperties.vertGridProperties.color']: colors.basic.chart.primary,
             ['paneProperties.vertGridProperties.style']: 1,
             ['paneProperties.horzGridProperties.color']: colors.basic.chart.primary,
@@ -56,7 +56,7 @@ export const customWidgetOptions = (colorTheme?: string) => {
             ['paneProperties.crossHairProperties.color']: colors.basic.chart.primary,
             ['paneProperties.crossHairProperties.width']: 1,
             ['paneProperties.crossHairProperties.style']: 1,
-            ['scalesProperties.backgroundColor']: colors.basic.chart.primary,
+            ['scalesProperties.backgroundColor']: "#14151a",
         },
         theme: 'Dark' as ThemeName,
     });
