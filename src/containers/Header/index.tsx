@@ -132,6 +132,17 @@ class Head extends React.Component<any> {
 
         const marketToggle = { "background": "#E0A300" }
 
+        const onMouseOver = event => {
+            const el = event.target;
+            el.style.color = "#E0A300";
+        };
+
+        const onMouseOut = event => {
+            const el = event.target;
+            let black = "#fff";
+            el.style.color = black;
+        };
+
         return [
             <div style={marketToggle} className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
                 <p className="pg-header__market-selector-toggle-value">
@@ -144,23 +155,26 @@ class Head extends React.Component<any> {
                     )}
             </div>,
             <div style={divStyle} >
-                <a href={'https://mex.gunthy.org'} >
+                <a href={'https://mex.gunthy.org'} onMouseEnter={event => onMouseOver(event)}
+                    onMouseOut={event => onMouseOut(event)}>
                     <div style={divStyle} >
                         {"MexⒼ-Spot"}
                     </div>
                 </a>
-                <a href={'https://mex.gunthy.org'}>
+                <a href={'https://mex.gunthy.org'} onMouseEnter={event => onMouseOver(event)}
+                    onMouseOut={event => onMouseOut(event)}>
                     <div style={divStyle} >
                         {"MexⒼ-Futures"}
                     </div>
                 </a>
-                <a href={'https://platform.gunthy.org'}>
+                <a href={'https://platform.gunthy.org'} onMouseEnter={event => onMouseOver(event)}
+                    onMouseOut={event => onMouseOut(event)}>
                     <div style={divStyle} >
                         {"Ⓖ-Forex "}
                         <img src={require(`./arrows/hot.png`)} alt="arrow" width="30%" />
                     </div>
                 </a>
-                
+
             </div>
 
         ];
