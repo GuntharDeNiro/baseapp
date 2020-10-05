@@ -32,7 +32,7 @@ class HeaderToolbarContainer extends React.Component<Props> {
         const cls = isPositive ? 'positive' : 'negative';
 
         const bidUnit = currentMarket && currentMarket.quote_unit.toUpperCase();
-        //const askUnit = currentMarket && currentMarket.base_unit.toUpperCase();
+        // const askUnit = currentMarket && currentMarket.base_unit.toUpperCase();
 
         return (
             <div className="pg-header__toolbar">
@@ -62,7 +62,7 @@ class HeaderToolbarContainer extends React.Component<Props> {
                 </div>
                 <div className="pg-header__toolbar-item">
                     <p className="pg-header__toolbar-item-value pg-header__toolbar-item-value-positive">
-                        {currentMarket && Decimal.format(Number(this.getTickerValue('vol')), currentMarket.amount_precision)} {bidUnit}
+                        {currentMarket && Decimal.format(Number(this.getTickerValue('vol')), currentMarket.price_precision)} {bidUnit}
                     </p>
                     <p className="pg-header__toolbar-item-text">
                         {this.translate('page.body.trade.toolBar.volume')}

@@ -96,6 +96,11 @@ class Head extends React.Component<any> {
         return id ? this.props.intl.formatMessage({ id }) : '';
     };
 
+    /*private goToAdvanced = () => {
+        let href = window.location.href;
+        window.location.href = href.replace('simpleT', 't');
+    }
+*/
     private renderMarketToolbar = () => {
         const { location } = this.props;
         if (!location.pathname.includes('/trading/')) {
@@ -155,12 +160,12 @@ class Head extends React.Component<any> {
                     )}
             </div>,
             <div style={divStyle} >
-                <a href={'https://mex.gunthy.org'} onMouseEnter={event => onMouseOver(event)}
+                <Link to={'/api/v2/barong/identity/sessions/sso'} onMouseEnter={event => onMouseOver(event)}
                     onMouseOut={event => onMouseOut(event)}>
                     <div style={divStyle} >
                         {"MexⒼ-Spot"}
                     </div>
-                </a>
+                </Link>
                 <a href={'https://mex.gunthy.org'} onMouseEnter={event => onMouseOver(event)}
                     onMouseOut={event => onMouseOut(event)}>
                     <div style={divStyle} >
@@ -174,11 +179,22 @@ class Head extends React.Component<any> {
                         <img src={require(`./arrows/hot.png`)} alt="arrow" width="30%" />
                     </div>
                 </a>
-
             </div>
 
         ];
     };
+
+    /*private renderMEXSSO = () => {
+        const { colorTheme } = this.props;
+        const isLight = colorTheme === 'light';
+
+        return (
+            <div className="pg-header__market-selector-toggle" onClick={() => window.location.href = '/api/v2/barong/identity/sessions/sso'}>
+                <p className="pg-header__market-selector-toggle-value">MEX</p>
+                <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow" />
+            </div>
+        )
+    };*/
 
     private openSidebar = () => this.props.toggleSidebar(!this.props.sidebarOpened);
 

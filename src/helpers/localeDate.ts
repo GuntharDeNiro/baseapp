@@ -7,6 +7,10 @@ export const localeDate = (date, format, timezone = getTimezone()) => {
             fullDate: 'DD-MM-YYYY HH:mm:ss',
             shortDate: 'DD-MM-YYYY HH:mm',
             time: 'HH:mm:ss',
+            meridiemTime: 'h:mm A',
+            dateTime: 'DD/MM HH:mm',
+            onlyDate: 'DD-MM',
+            shortTime: 'HH:mm',
           }[type];
     };
     const formatDisplay = getFormat(format);

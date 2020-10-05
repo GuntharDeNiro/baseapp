@@ -4,7 +4,7 @@ import * as ReactGA from 'react-ga';
 import { IntlProvider } from 'react-intl';
 import { connect, MapStateToProps } from 'react-redux';
 import { Router } from 'react-router';
-import { Alerts, ErrorWrapper, Footer, Header, Sidebar } from './containers';
+import { Alerts, ErrorWrapper, Header, Sidebar } from './containers';
 import { RootState } from './modules';
 import { Layout } from './routes';
 import { gaTrackerKey } from '../src/api';
@@ -53,7 +53,6 @@ class AppLayout extends React.Component<Props, {}, {}> {
                         <Sidebar/>
                         <Alerts/>
                         <Layout/>
-                        <Footer/>
                     </ErrorWrapper>
                 </Router>
             </IntlProvider>

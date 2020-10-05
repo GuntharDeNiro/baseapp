@@ -7,7 +7,7 @@ export const customWidgetParams = {};
 export const customWidgetOptions = (colorTheme?: string) => {
     if (colorTheme === 'light') {
         return ({
-            toolbar_bg: colors.light.chart.primary,
+            toolbar_bg: "#14151a",
             loading_screen: {
                 backgroundColor: colors.light.chart.primary,
             },
@@ -35,9 +35,9 @@ export const customWidgetOptions = (colorTheme?: string) => {
     }
 
     return ({
-        toolbar_bg: "#14151a",
+        toolbar_bg: colors.basic.chart.primary,
         loading_screen: {
-            backgroundColor:"#14151a",
+            backgroundColor:colors.basic.chart.primary,
         },
         overrides: {
             ['symbolWatermarkProperties.color']: colors.basic.chart.primary,

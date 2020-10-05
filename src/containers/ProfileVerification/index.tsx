@@ -2,10 +2,11 @@ import cn from 'classnames';
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect, MapDispatchToPropsFunction } from 'react-redux';
+import { RejectedIcon } from '../../assets/images/RejectedIcon';
 import { Label, labelFetch, selectLabelData, selectUserInfo, User } from '../../modules';
 
 interface ReduxProps {
-    label: Label[];
+    labels: Label[];
 }
 
 interface DispatchProps {
@@ -73,21 +74,27 @@ class ProfileVerificationComponent extends React.Component<Props> {
     }
 
     private renderThirdLevel(userLevel: number) {
+        const { labels } = this.props;
         const targetLevel = 3;
-        const documentLabel = this.props.label.find((label: Label) => label.key === 'document');
-        const isPending = documentLabel && documentLabel.value === 'pending' ? this.renderPendingIcon() : '';
 
-        const {
-            titleClassName,
-        } = this.getLevelsClassNames(userLevel, targetLevel);
+        const isProfileSubmitted = labels && labels.find(l => l.key === 'profile' && l.scope === 'private' && l.value === 'submitted');
+        const isProfileRejected = labels && labels.find(l => l.key === 'profile' && l.scope === 'private' && l.value === 'rejected');
+        const isDocumentPending = labels && labels.find(l => l.key === 'document' && l.scope === 'private' && l.value === 'pending');
+        const isDocumentRejected = labels && labels.find(l => l.key === 'document' && l.scope === 'private' && l.value === 'rejected');
+
+        const isPendingLabel = isDocumentPending || isProfileSubmitted;
+        const isRejectedLabel = isDocumentRejected || isProfileRejected;
+
+        const { titleClassName } = this.getLevelsClassNames(userLevel, targetLevel);
 
         return (
             <div className="pg-profile-page__row pg-profile-page__level-verification">
                 <div className={titleClassName}>
-                    {this.renderIdentityVerification('page.body.profile.header.account.profile.identity', userLevel, targetLevel, documentLabel)}
+                    {this.renderIdentityVerification('page.body.profile.header.account.profile.identity', userLevel, targetLevel, isPendingLabel)}
                     <p><FormattedMessage id="page.body.profile.header.account.profile.identity.message" /></p>
                 </div>
-                {isPending}
+                {isPendingLabel ? this.renderPendingIcon() : null}
+                {isRejectedLabel && !isPendingLabel ? this.renderRejectedIcon() : null}
             </div>
         );
     }
@@ -97,6 +104,15 @@ class ProfileVerificationComponent extends React.Component<Props> {
             <div className="pg-profile-page__level-verification__pending">
                 <p><FormattedMessage id="page.body.wallets.table.pending" /></p>
                 <img alt="pending" src={require('../../assets/images/pending.svg')} />
+            </div>
+        );
+    }
+
+    public renderRejectedIcon() {
+        return (
+            <div className="pg-profile-page__level-verification__rejected">
+                <p><FormattedMessage id="page.body.wallets.table.rejected" /></p>
+                <RejectedIcon />
             </div>
         );
     }
@@ -126,7 +142,7 @@ class ProfileVerificationComponent extends React.Component<Props> {
     }
 
     private renderIdentityVerification(text: string, userLevel, targetLevel, documentLabel) {
-      const isLabelExist = this.props.label;
+      const isLabelExist = this.props.labels;
 
       if (isLabelExist.length > 0) {
         switch (userLevel) {
@@ -181,7 +197,7 @@ class ProfileVerificationComponent extends React.Component<Props> {
 
 const mapStateToProps = state => ({
     user: selectUserInfo(state),
-    label: selectLabelData(state),
+    labels: selectLabelData(state),
 });
 
 const mapDispatchProps: MapDispatchToPropsFunction<DispatchProps, {}> =

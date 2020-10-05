@@ -221,7 +221,7 @@ export class Withdraw extends React.Component<WithdrawProps, WithdrawState> {
 
     private handleChangeInputAmount = (text: string) => {
         const { fixed } = this.props;
-        const value = (text !== '') ? Number(parseFloat(text).toFixed(fixed)) : '';
+        const value = (text !== '') ? Number(parseFloat(text.replace(',', '.')).toFixed(fixed)) : '';
         const total = (value !== '') ? value - this.props.fee : 0;
         if (total < 0) {
             this.setTotal(0);
