@@ -35,7 +35,7 @@ export const customWidgetOptions = (colorTheme?: string) => {
     }
 
     return ({
-        toolbar_bg: colors.basic.chart.primary,
+        toolbar_bg: "#14151a",
         loading_screen: {
             backgroundColor:colors.basic.chart.primary,
         },

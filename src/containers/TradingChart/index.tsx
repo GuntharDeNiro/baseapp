@@ -167,6 +167,7 @@ export class TradingChartComponent extends React.PureComponent<Props> {
     private updateChart = (currentMarket: Market) => {
         if (this.tvWidget) {
             this.tvWidget.onChartReady(() => {
+                this.tvWidget!.activeChart().createStudy('Moving Average Exponential', false, false, [26])
                 this.tvWidget!.activeChart().setSymbol(currentMarket.id, () => {
                     print('Symbol set', currentMarket.id);
                 });
