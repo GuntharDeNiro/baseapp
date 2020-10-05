@@ -18,7 +18,7 @@ export const widgetOptions = (colorTheme?: string) => {
         custom_css_url: '/css/tradingview.css',
         debug: false,
         details: true,
-        disabled_features: ['header_symbol_search'],
+        disabled_features: ['use_localstorage_for_settings', 'header_symbol_search'],
         enable_publishing: false,
         enabled_features: ['show_animated_logo'],
         fullscreen: false,

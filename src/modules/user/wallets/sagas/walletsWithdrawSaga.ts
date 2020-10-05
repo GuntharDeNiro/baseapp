@@ -14,7 +14,8 @@ const walletsWithdrawCcyOptions: RequestOptions = {
 
 export function* walletsWithdrawCcySaga(action: WalletsWithdrawCcyFetch) {
     try {
-        yield call(API.post(walletsWithdrawCcyOptions), '/account/withdraws', action.payload);
+        const data = {...action.payload, amount: `${action.payload.amount}`};
+        yield call(API.post(walletsWithdrawCcyOptions), '/account/withdraws', data);
         yield put(walletsWithdrawCcyData());
         yield put(alertPush({message: ['success.withdraw.action'], type: 'success'}));
     } catch (error) {

@@ -14,12 +14,27 @@
     width: calc(100% / 4);
   }
 
+  &__positive {
+    color: var(--trading-header-positive);
+  }
+
+  &__negative {
+    color: var(--trading-header-negative);
+  }
+
   .cr-table tbody .cr-table__row--selected td {
-    background-color: #2E3136;
+    background-color: var(--nav-item-hover);
 
     &:first-child {
-              color: #fff;
+      color: var(--bright-1);
+    }
 
+    .pg-dropdown-markets-list-container__positive {
+      color: #19653f !important;
+    }
+
+    .pg-dropdown-markets-list-container__negative {
+      color: #a10000 !important;
     }
   }
 
@@ -37,13 +52,6 @@
     cursor: pointer;
   }
 
-  &__positive {
-    color: var(--trading-header-positive);
-  }
-
-  &__negative {
-    color: var(--trading-header-negative);
-  }
 
   &__header-selected {
     color: var(--bright-1);

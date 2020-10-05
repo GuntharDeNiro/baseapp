@@ -3,11 +3,4 @@ access-control-allow-origin: *
 access-control-allow-methods: GET, POST, PUT, PATCH, DELETE
 access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Authorization
 
-{
-    "email": "john@barong.io",
-    "level": 2,
-    "otp": true,
-    "role": "superadmin",
-    "state": "active",
-    "uid": "ID787E383938"
-}
+{"email":"elvira+2@tunex.io","uid":"ID96EC453438","role":"member","level":2,"otp":false,"state":"active","referral_uid":null,"data":null,"created_at":"2020-08-06T05:14:52Z","updated_at":"2020-08-06T05:50:16Z","labels":[{"key":"email","value":"verified","scope":"private","created_at":"2020-08-06T05:49:26Z","updated_at":"2020-08-06T05:49:26Z"},{"key":"phone","value":"verified","scope":"private","created_at":"2020-08-06T05:50:16Z","updated_at":"2020-08-06T05:50:16Z"}],"phones":[],"profiles":[{"first_name":"Elvira","last_name":"Myroshnychenko","dob":"1974-09-23","address":"Konstantinovska 45","postcode":"04071","city":"Kyiv","country":"AF","state":"drafted","metadata":"{\"nationality\":\"Afghan\"}","created_at":"2020-08-06T05:51:59Z","updated_at":"2020-08-06T05:51:59Z"}],"data_storages":[]}

@@ -1,0 +1,119 @@
+.gunthy-order {
+    .cr-order-item {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: calc(var(--gap) * 2.5);
+        width: 100%;
+        margin-top: 40px;
+
+        .cr-dropdown,
+        .cr-order-input,
+        &__percentage-buttons,
+        &__total,
+        &__available,
+        &__fee {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .cr-order-input {
+            height: calc(var(--gap) * 12) !important;
+            line-height: calc(var(--gap) * 6) !important;
+        }
+
+        &__dropdown__label {
+            background-color: inherit;
+            margin-left: calc(var(--gap) * 2);
+            padding: 0 calc(var(--gap) * 0.5);
+            position: absolute;
+            top: calc(var(--gap) * 8.6) !important;
+            z-index: 1;
+        }
+
+        .cr-dropdown {
+            &__input-label {
+                margin-left: calc(var(--gap) * 2);
+            }
+
+            &__list {
+                margin-top: calc(var(--gap) * 5.2);
+                width: calc(100% - 2px);
+            }
+
+            &__input {
+                height: calc(var(--gap) * 10) !important;
+                span {
+                    line-height: calc(var(--gap) * 9) !important;
+                }
+            }
+
+            &__input--open {
+                height: calc(var(--gap) * 10) !important;
+                span {
+                    line-height: calc(var(--gap) * 9) !important;
+                }
+            }
+        }
+
+        &--compact {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        &__label {
+            font-size: var(--font-size);
+            font-weight: 200;
+            color: var(--base-2);
+            line-height: calc(var(--font-size) * 2);
+        }
+
+        &__total,
+        &__available,
+        &__fee {
+            font-size: 1.5em;
+
+            &__label {
+                text-align: left;
+            }
+
+            &__content {
+                text-align: right;
+
+                &__currency {
+                    margin-left: var(--gap);
+                }
+            }
+        }
+
+        .cr-order-input {
+            &__fieldset__input {
+                color: var(--placeholder-text);
+                &__price {
+                    font-size: calc(var(--gap) * 1.75);
+                }
+            }
+            &__crypto-icon {
+                width: auto;
+            }
+            &__input {
+                .cr-order-input__price {
+                    display: inline-block;
+                    background: transparent !important;
+                    margin-bottom: 5px;
+                    margin-top: 5px;
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        .cr-order-item__percentage-buttons {
+            height: 60px;
+
+            button {
+                font-size: calc(var(--gap) * 2.5) !important;
+            }
+        }
+    }
+}

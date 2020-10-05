@@ -35,9 +35,9 @@ export const customWidgetOptions = (colorTheme?: string) => {
     }
 
     return ({
-        toolbar_bg: "#14151a",
+        toolbar_bg: colors.basic.chart.primary,
         loading_screen: {
-            backgroundColor:"#14151a",
+            backgroundColor:colors.basic.chart.primary,
         },
         overrides: {
             ['symbolWatermarkProperties.color']: colors.basic.chart.primary,
@@ -48,7 +48,7 @@ export const customWidgetOptions = (colorTheme?: string) => {
             ['mainSeriesProperties.candleStyle.borderDownColor']: colors.basic.chart.down,
             ['mainSeriesProperties.candleStyle.wickUpColor']: colors.basic.chart.up,
             ['mainSeriesProperties.candleStyle.wickDownColor']: colors.basic.chart.down,
-            ['paneProperties.background']: "#14151a",
+            ['paneProperties.background']: colors.basic.chart.primary,
             ['paneProperties.vertGridProperties.color']: colors.basic.chart.primary,
             ['paneProperties.vertGridProperties.style']: 1,
             ['paneProperties.horzGridProperties.color']: colors.basic.chart.primary,
@@ -56,7 +56,7 @@ export const customWidgetOptions = (colorTheme?: string) => {
             ['paneProperties.crossHairProperties.color']: colors.basic.chart.primary,
             ['paneProperties.crossHairProperties.width']: 1,
             ['paneProperties.crossHairProperties.style']: 1,
-            ['scalesProperties.backgroundColor']: "#14151a",
+            ['scalesProperties.backgroundColor']: colors.basic.chart.primary,
         },
         theme: 'Dark' as ThemeName,
     });

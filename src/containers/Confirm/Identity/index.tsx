@@ -65,24 +65,30 @@ interface IdentityState {
 type Props = ReduxProps & DispatchProps & InjectedIntlProps;
 
 class IdentityComponent extends React.Component<Props, IdentityState> {
-    public state = {
-        city: '',
-        countryOfBirth: '',
-        dateOfBirth: '',
-        firstName: '',
-        lastName: '',
-        metadata: {
-            nationality: '',
-        },
-        postcode: '',
-        residentialAddress: '',
-        cityFocused: false,
-        dateOfBirthFocused: false,
-        firstNameFocused: false,
-        lastNameFocused: false,
-        postcodeFocused: false,
-        residentialAddressFocused: false,
-    };
+    constructor(props: Props) {
+        super(props);
+        const profile = props.user.profiles ? {
+            ...props.user.profiles[props.user.profiles.length-1],
+        } : null;
+        this.state = {
+            city: profile.city ? profile.city : '',
+            countryOfBirth: '',
+            dateOfBirth: '',
+            firstName: profile.first_name ? profile.first_name : '',
+            lastName: profile.last_name ? profile.last_name : '',
+            metadata: {
+                nationality: '',
+            },
+            postcode: profile.postcode ? profile.postcode : '',
+            residentialAddress: profile.address ? profile.address : '',
+            cityFocused: false,
+            dateOfBirthFocused: false,
+            firstNameFocused: false,
+            lastNameFocused: false,
+            postcodeFocused: false,
+            residentialAddressFocused: false,
+        };
+    }
 
     public translate = (e: string) => {
         return this.props.intl.formatMessage({id: e});
@@ -96,6 +102,7 @@ class IdentityComponent extends React.Component<Props, IdentityState> {
 
         if ((!prev.editSuccess && editSuccess) || (!prev.sendSuccess && sendSuccess)) {
             this.props.labelFetch();
+            window.location.href = '/profile';
         }
     }
 
@@ -459,11 +466,22 @@ class IdentityComponent extends React.Component<Props, IdentityState> {
             metadata: JSON.stringify({
                 nationality: this.state.metadata.nationality,
             }),
+            confirm: true,
         };
         const isIdentity = labels.length && labels.find(w => w.key === 'profile' && w.value === 'verified' && w.scope === 'private');
 
-        if (!isIdentity && user.profile && user.profile.address) {
-            this.props.editIdentity(profileInfo);
+        if (!isIdentity && user.profiles && user.profiles.length > 0) {
+            const isRejected = labels.reduce((memo, el) => {
+                if (el.key === 'profile' && el.value === 'rejected') {
+                    memo = true;
+                }
+                return memo;
+            }, false);
+            if (isRejected) {
+                this.props.sendIdentity(profileInfo);
+            } else {
+                this.props.editIdentity(profileInfo);
+            }
         } else {
             this.props.sendIdentity(profileInfo);
         }

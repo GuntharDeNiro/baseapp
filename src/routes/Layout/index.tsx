@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router';
 import { Redirect, withRouter } from 'react-router-dom';
 import { minutesUntilAutoLogout } from '../../api';
 import { WalletsFetch } from '../../containers';
+import { SimpleTradingScreen } from '../../custom/screens';
 import { toggleColorTheme } from '../../helpers';
 import {
     logoutFetch,
@@ -127,8 +128,8 @@ class LayoutComponent extends React.Component<LayoutProps> {
 
         if (!isLoggedIn && next.isLoggedIn) {
             this.props.walletsReset();
-            if (!history.location.pathname.includes('/trading')) {
-                history.push('/trading/');
+            if (!history.location.pathname.includes('/simpleTrading')) {
+                history.push('/simpleTrading/');
             }
         }
     }
@@ -147,7 +148,7 @@ class LayoutComponent extends React.Component<LayoutProps> {
             userLoading,
         } = this.props;
 
-        const tradingCls = window.location.pathname.includes('/trading') ? 'trading-layout' : '';
+        const tradingCls = ['/trading', '/simpleTrading'].some(r => window.location.pathname.includes(r)) ? 'trading-layout' : '';
         toggleColorTheme(colorTheme);
 
         return (
@@ -160,13 +161,14 @@ class LayoutComponent extends React.Component<LayoutProps> {
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/accounts/password_reset" component={ChangeForgottenPasswordScreen} />
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/email-verification" component={EmailVerificationScreen} />
                     <Route exact={true} path="/trading/:market?" component={TradingScreen} />
+                    <Route exact={true} path="/simpleTrading/:market?" component={SimpleTradingScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/orders" component={OrdersTabScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/history" component={HistoryScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/confirm" component={ConfirmScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/profile" component={ProfileScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/wallets" component={WalletsScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/security/2fa" component={ProfileTwoFactorAuthScreen} />
-                    <Route path="**"><Redirect to="/trading/" /></Route>
+                    <Route path="**"><Redirect to="/simpleTrading/" /></Route>
                 </Switch>
                 {isLoggedIn && <WalletsFetch/>}
             </div>
