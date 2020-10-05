@@ -114,7 +114,7 @@ class Head extends React.Component<any> {
         const divStyle = {
             color: '#fff',
             display: "flex",
-            "flex-direction": "column",
+            "flex-direction": "row",
             "font-size": "14px",
             "text-decoration": "none",
             "box-sizing": "border-box",
@@ -143,29 +143,28 @@ class Head extends React.Component<any> {
                         <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow" />
                     )}
             </div>,
-            <div style={divStyle} className="pg-logo" >
+            <div className={divStyle} >
                 <a href={'https://mex.gunthy.org'} className="pg-header__navbar">
-                    <div style={divStyle} className="pg-logo" >
+                    <div >
                         {"MexⒼ-Spot"}
                     </div>
                 </a>
                 <a href={'https://mex.gunthy.org'} className="pg-header__navbar">
-                    <div style={divStyle} className="pg-logo" >
+                    <div >
                         {"MexⒼ-Futures"}
                     </div>
                 </a>
-                <a href={'https://spot.gunthy.org'} className="pg-header__navbar">
-                    <div style={divStyle} className="pg-logo" >
-                        {"Ⓖ-ERC20"}
-                    </div>
-                </a>
-                             <a href={'https://platform.gunthy.org'} className="pg-header__navbar">
-                    <div style={divStyle} className="pg-logo" >
+                <a href={'https://platform.gunthy.org'} className="pg-header__navbar">
+                    <div  >
                         {"Ⓖ-Forex "}
                         <img src={require(`./arrows/hot.png`)} alt="arrow" width="30%"/>
                     </div>
                 </a>
-                
+                <a href={'https://spot.gunthy.org'} className="pg-header__navbar">
+                    <div >
+                        {"Ⓖ-ERC20"}
+                    </div>
+                </a>
             </div>
 
         ];
