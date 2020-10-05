@@ -43,7 +43,35 @@ class Head extends React.Component<any> {
             mobileWallet,
         } = this.props;
         const tradingCls = window.location.pathname.includes('/trading') ? 'pg-container-trading' : '';
+        const divStyle = {
+            color: '#fff',
+            display: "flex",
+            "flex-direction": "row",
+            "font-size": "14px",
+            "text-decoration": "none",
+            "box-sizing": "border-box",
+            "margin": "0px",
+            "min-width": "0px",
+            "padding-left": "8px",
+            "padding-right": "16px",
+            "flex-shrink": "0",
+            "-webkit-box-align": "left",
+            "align-items": "left",
+            "a:hover": {
+                background: "#E0A300"
+            },
+        };
 
+        const onMouseOver = event => {
+            const el = event.target;
+            el.style.color = "#E0A300";
+        };
+
+        const onMouseOut = event => {
+            const el = event.target;
+            let black = "#fff";
+            el.style.color = black;
+        };
         return (
             <React.Fragment>
                 {!['/confirm'].some(r => location.pathname.includes(r)) &&
@@ -68,6 +96,28 @@ class Head extends React.Component<any> {
                             </Link>
                             {this.renderMarketToggler()}
                             {location.pathname.includes('/simpleT') ? (<div className="pg-header__market-selector-toggle adv-trade" onClick={this.goToAdvanced}>Advanced Trading</div>) : ''}
+
+                            <div style={divStyle} >
+                                <Link to={'/api/v2/barong/identity/sessions/sso'} onMouseEnter={event => onMouseOver(event)}
+                                    onMouseOut={event => onMouseOut(event)}>
+                                    <div style={divStyle} >
+                                        {"MexⒼ-Spot"}
+                                    </div>
+                                </Link>
+                                <a href={'https://mex.gunthy.org'} onMouseEnter={event => onMouseOver(event)}
+                                    onMouseOut={event => onMouseOut(event)}>
+                                    <div style={divStyle} >
+                                        {"MexⒼ-Futures"}
+                                    </div>
+                                </a>
+                                <a href={'https://platform.gunthy.org'} onMouseEnter={event => onMouseOver(event)}
+                                    onMouseOut={event => onMouseOut(event)}>
+                                    <div style={divStyle} >
+                                        {"Ⓖ-Forex "}
+                                        <img src={require(`./arrows/hot.png`)} alt="arrow" width="30%" />
+                                    </div>
+                                </a>
+                            </div>
                             <div className="pg-header__location">
                                 {mobileWallet ? <span>{mobileWallet}</span> : <span>{location.pathname.split('/')[1]}</span>}
                             </div>
