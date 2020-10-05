@@ -128,26 +128,7 @@ class Head extends React.Component<any> {
                 background: "#E0A300"
             },
         };
-        const callOut = {
-            right: "15px",
-            "box-sizing": "border-box",
-            margin: "0px 0px 0px 8px",
-            "min-width": "0px",
-            display: "flex",
-            position: "relative",
-            "border-radius": "4px",
-            "-webkit-box-align": "center",
-            "align-items": "center",
-            height: "16px",
-            "background-color": "#E0A300",
-            color: "#000",
-            "line-height": "16px",
-            "padding-left": "4px",
-            "padding-right": "4px",
-            "font-size": "12px",
-            left: "0px"
-        }
-
+        
         const marketToggle = { "background": "#E0A300" }
 
         return [
