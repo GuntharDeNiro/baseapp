@@ -67,6 +67,7 @@ class Head extends React.Component<any> {
                                 </div>
                             </Link>
                             {this.renderMarketToggler()}
+                            {location.pathname.includes('/simpleT') ? (<div className="pg-header__market-selector-toggle adv-trade" onClick={this.goToAdvanced}>Advanced Trading</div>) : ''}
                             <div className="pg-header__location">
                                 {mobileWallet ? <span>{mobileWallet}</span> : <span>{location.pathname.split('/')[1]}</span>}
                             </div>
@@ -96,11 +97,11 @@ class Head extends React.Component<any> {
         return id ? this.props.intl.formatMessage({ id }) : '';
     };
 
-    /*private goToAdvanced = () => {
+    private goToAdvanced = () => {
         let href = window.location.href;
         window.location.href = href.replace('simpleT', 't');
     }
-*/
+
     private renderMarketToolbar = () => {
         const { location } = this.props;
         if (!location.pathname.includes('/trading/')) {
