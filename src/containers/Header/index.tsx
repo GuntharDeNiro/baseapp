@@ -122,7 +122,7 @@ class Head extends React.Component<any> {
             "padding-left": "8px",
             "padding-right": "16px",
             "flex-shrink": "0",
-            "-webkit-box-align": "center",
+            "-webkit-box-align": "left",
             "align-items": "center",
             "a:hover": {
                 background: "#E0A300"
