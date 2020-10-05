@@ -160,11 +160,7 @@ class Head extends React.Component<any> {
                         <img src={require(`./arrows/hot.png`)} alt="arrow" width="30%" />
                     </div>
                 </a>
-                <a href={'https://spot.gunthy.org'}>
-                    <div style={divStyle} >
-                        {"Ⓖ-ERC20"}
-                    </div>
-                </a>
+                
             </div>
 
         ];
